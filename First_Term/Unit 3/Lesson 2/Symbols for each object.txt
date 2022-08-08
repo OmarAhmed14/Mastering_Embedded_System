@@ -1,0 +1,13 @@
+$ arm-none-eabi-nm.exe main.o
+00000000 T main
+00000000 D string_buffer
+00000000 R string_buffer2
+         U UART_string
+
+
+
+
+$ arm-none-eabi-nm.exe UART.o
+00000000 T UART_string
+
+
