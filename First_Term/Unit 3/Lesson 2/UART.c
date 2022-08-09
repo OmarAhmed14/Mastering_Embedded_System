@@ -8,7 +8,7 @@ void UART_string (unsigned char* p)
 {
 	while (*p != 0)
 	{
-		UART0DR = (unsigned int*) *p;
+		UART0DR = (unsigned int) *p;
 		p++;
 	}
 }
