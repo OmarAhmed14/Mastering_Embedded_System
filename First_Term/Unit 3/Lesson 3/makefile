@@ -10,7 +10,7 @@ SRC=$(wildcard *.c)
 OBJ=$(SRC:.c=.o)
 AS=$(wildcard *.s)
 ASOBJ=$(AS:.s=.o)
-PROJECT_NAME=learn
+PROJECT_NAME=learn_cortex_m3
 
 all: $(PROJECT_NAME).bin
 	@echo "<<<<<<<Build is done>>>>>>>" 
@@ -22,7 +22,7 @@ startup.o: startup.s
 	$(CC)gcc.exe -c $(CFLAGS) $(INCS) $< -o $@
 
 $(PROJECT_NAME).elf: $(OBJ) $(ASOBJ)
-	$(CC)ld.exe -T linker_script.ld $(OBJ) $(ASOBJ) $(LIBS) -o $@ -Map=map.output
+	$(CC)ld.exe -T linker_script.ld $(OBJ) $(ASOBJ) $(LIBS) -Map=output.map -o $@ 
  
 $(PROJECT_NAME).bin: $(PROJECT_NAME).elf
 	$(CC)objcopy.exe -O binary $< $@

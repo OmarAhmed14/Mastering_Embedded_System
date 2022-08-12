@@ -6,8 +6,8 @@ Author: Omar Ahmed
 
 MEMORY 
 {
-	FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 128k
-	SRAM (rwx) : ORIGIN = 0x20000000, LENGTH = 20k
+	flash(RX) : ORIGIN = 0x08000000, LENGTH = 128k
+	sram(RWX) : ORIGIN = 0x20000000, LENGTH = 20k
 }
 SECTIONS
 {
@@ -16,19 +16,16 @@ SECTIONS
 	  *(.vectors*)
 	  *(.text*)
 	  *(.rodata)
-	}>FLASH
+	}>flash
 	
 	.data :
 	{
 		*(.data)
-	}>FLASH
+	}>flash
 
 	.bss :
 	{
 		*(.bss)
-	}>SRAM
-
-
-
+	}>sram
 
 }
