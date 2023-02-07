@@ -1,0 +1,6 @@
+1 omar ahmed 3.5 1 2 3 4 5
+2 hossam tarek 2.8 1 8 4 9 7
+3 youssef mohamed 2.7 4 5 7 9 2
+4 youssef ahmed 2.5 1 4 8 9 5
+5 ziad wael 2.5 1 5 7 9 4 
+3 mostafa khaled 3.2 1 7 8 9 6 
