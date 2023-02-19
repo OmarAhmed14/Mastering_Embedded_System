@@ -1,0 +1,4 @@
+main.c:45:6:Clock_Init_32MHz	4	static
+main.c:53:6:GPIOA_INIT	4	static
+main.c:63:5:main	8	static
+main.c:73:6:EXTI0_IRQHandler	4	static
