@@ -1,0 +1,280 @@
+
+Unit7_Lesson1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000006c  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  0000018a  2**0
+                  ALLOC, LOAD, DATA
+  2 .comment      0000002f  00000000  00000000  0000018a  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  000001b9  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000028  00000000  00000000  000001c7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000700  00000000  00000000  000001ef  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000515  00000000  00000000  000008ef  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000001f6  00000000  00000000  00000e04  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000034  00000000  00000000  00000ffc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000196  00000000  00000000  00001030  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000096  00000000  00000000  000011c6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000018  00000000  00000000  0000125c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  00000108  00000108  0000017c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001274  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.GPIO_Init 0000000c  000000fc  000000fc  00000170  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.main    0000007a  0000006c  0000006c  000000e0  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.__dummy_fini 00000002  00000110  00000110  00000184  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.__dummy_funcs_on_exit 00000002  00000112  00000112  00000186  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.__dummy_simulator_exit 00000002  00000114  00000114  00000188  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.exit    00000016  000000e6  000000e6  0000015a  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text._Exit   00000004  0000010c  0000010c  00000180  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+   8:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+   c:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  10:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  14:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  18:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  1c:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  20:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  24:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  28:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  2c:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  30:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  34:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  38:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  3c:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  40:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  44:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  48:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  4c:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+  50:	0c 94 84 00 	jmp	0x108	; 0x108 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <_etext>
+  64:	0c 94 73 00 	jmp	0xe6	; 0xe6 <exit>
+
+00000068 <_exit>:
+  68:	f8 94       	cli
+
+0000006a <__stop_program>:
+  6a:	ff cf       	rjmp	.-2      	; 0x6a <__stop_program>
+
+Disassembly of section .text:
+
+00000108 <__bad_interrupt>:
+ 108:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.GPIO_Init:
+
+000000fc <GPIO_Init>:
+
+
+void GPIO_Init (void)
+{
+	/*LEDS OUTPUT*/
+	DDRD= (DDRD & 0x1F)|0xE0;
+  fc:	81 b3       	in	r24, 0x11	; 17
+  fe:	80 6e       	ori	r24, 0xE0	; 224
+	
+	/*PD0 (BUTTON) >> FLOATING INPUT*/
+	DDRD &=~ (1<<0);
+ 100:	8e 7f       	andi	r24, 0xFE	; 254
+	
+	/*PD4 (BUZZER) >> OUTPUT*/
+	DDRD |= (1<<4);
+ 102:	80 61       	ori	r24, 0x10	; 16
+ 104:	81 bb       	out	0x11, r24	; 17
+ 106:	08 95       	ret
+
+Disassembly of section .text.main:
+
+0000006c <main>:
+
+int main(void)
+{
+	unsigned char LED=5, flag=1,F=1;
+	
+	GPIO_Init();
+  6c:	0e 94 7e 00 	call	0xfc	; 0xfc <GPIO_Init>
+	
+}
+
+int main(void)
+{
+	unsigned char LED=5, flag=1,F=1;
+  70:	21 e0       	ldi	r18, 0x01	; 1
+  72:	95 e0       	ldi	r25, 0x05	; 5
+	
+	GPIO_Init();
+	
+    while(1)
+    {
+        if ((PIND &1)==1)
+  74:	80 9b       	sbis	0x10, 0	; 16
+  76:	33 c0       	rjmp	.+102    	; 0xde <main+0x72>
+		{
+			if (LED <=7 && F == 1)
+  78:	98 30       	cpi	r25, 0x08	; 8
+  7a:	20 f4       	brcc	.+8      	; 0x84 <main+0x18>
+  7c:	21 30       	cpi	r18, 0x01	; 1
+  7e:	21 f0       	breq	.+8      	; 0x88 <main+0x1c>
+				flag=0;
+			else
+				flag =1;
+  80:	81 e0       	ldi	r24, 0x01	; 1
+  82:	03 c0       	rjmp	.+6      	; 0x8a <main+0x1e>
+  84:	81 e0       	ldi	r24, 0x01	; 1
+  86:	01 c0       	rjmp	.+2      	; 0x8a <main+0x1e>
+    while(1)
+    {
+        if ((PIND &1)==1)
+		{
+			if (LED <=7 && F == 1)
+				flag=0;
+  88:	80 e0       	ldi	r24, 0x00	; 0
+			else
+				flag =1;
+				
+			switch (flag){
+  8a:	88 23       	and	r24, r24
+  8c:	19 f0       	breq	.+6      	; 0x94 <main+0x28>
+  8e:	81 30       	cpi	r24, 0x01	; 1
+  90:	79 f0       	breq	.+30     	; 0xb0 <main+0x44>
+  92:	1f c0       	rjmp	.+62     	; 0xd2 <main+0x66>
+			case 0:
+				PORTD ^= (1<<LED);
+  94:	21 e0       	ldi	r18, 0x01	; 1
+  96:	30 e0       	ldi	r19, 0x00	; 0
+  98:	09 2e       	mov	r0, r25
+  9a:	02 c0       	rjmp	.+4      	; 0xa0 <main+0x34>
+  9c:	22 0f       	add	r18, r18
+  9e:	33 1f       	adc	r19, r19
+  a0:	0a 94       	dec	r0
+  a2:	e2 f7       	brpl	.-8      	; 0x9c <main+0x30>
+  a4:	82 b3       	in	r24, 0x12	; 18
+  a6:	28 27       	eor	r18, r24
+  a8:	22 bb       	out	0x12, r18	; 18
+				F=1;
+				LED++;
+  aa:	9f 5f       	subi	r25, 0xFF	; 255
+				flag =1;
+				
+			switch (flag){
+			case 0:
+				PORTD ^= (1<<LED);
+				F=1;
+  ac:	21 e0       	ldi	r18, 0x01	; 1
+				LED++;
+				break;
+  ae:	11 c0       	rjmp	.+34     	; 0xd2 <main+0x66>
+			
+			case 1:
+				LED--;
+  b0:	91 50       	subi	r25, 0x01	; 1
+				F=0;
+				PORTD ^= (1<<LED);
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	30 e0       	ldi	r19, 0x00	; 0
+  b6:	09 2e       	mov	r0, r25
+  b8:	02 c0       	rjmp	.+4      	; 0xbe <main+0x52>
+  ba:	22 0f       	add	r18, r18
+  bc:	33 1f       	adc	r19, r19
+  be:	0a 94       	dec	r0
+  c0:	e2 f7       	brpl	.-8      	; 0xba <main+0x4e>
+  c2:	82 b3       	in	r24, 0x12	; 18
+  c4:	28 27       	eor	r18, r24
+  c6:	22 bb       	out	0x12, r18	; 18
+				if (LED==5)
+  c8:	95 30       	cpi	r25, 0x05	; 5
+  ca:	11 f0       	breq	.+4      	; 0xd0 <main+0x64>
+				LED++;
+				break;
+			
+			case 1:
+				LED--;
+				F=0;
+  cc:	20 e0       	ldi	r18, 0x00	; 0
+  ce:	01 c0       	rjmp	.+2      	; 0xd2 <main+0x66>
+				PORTD ^= (1<<LED);
+				if (LED==5)
+					F=1;
+  d0:	21 e0       	ldi	r18, 0x01	; 1
+				break;
+			}
+			
+			PORTD |= (1<<4);
+  d2:	82 b3       	in	r24, 0x12	; 18
+  d4:	80 61       	ori	r24, 0x10	; 16
+  d6:	82 bb       	out	0x12, r24	; 18
+					
+			while ((PIND &1)==1);
+  d8:	80 99       	sbic	0x10, 0	; 16
+  da:	fe cf       	rjmp	.-4      	; 0xd8 <main+0x6c>
+  dc:	cb cf       	rjmp	.-106    	; 0x74 <main+0x8>
+		}
+		
+		else
+			PORTD &=~ (1<<4);	
+  de:	82 b3       	in	r24, 0x12	; 18
+  e0:	8f 7e       	andi	r24, 0xEF	; 239
+  e2:	82 bb       	out	0x12, r24	; 18
+  e4:	c7 cf       	rjmp	.-114    	; 0x74 <main+0x8>
+
+Disassembly of section .text.__dummy_fini:
+
+00000110 <_fini>:
+ 110:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+00000112 <__funcs_on_exit>:
+ 112:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+00000114 <__simulator_exit>:
+ 114:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000000e6 <exit>:
+  e6:	ec 01       	movw	r28, r24
+  e8:	0e 94 89 00 	call	0x112	; 0x112 <__funcs_on_exit>
+  ec:	0e 94 88 00 	call	0x110	; 0x110 <_fini>
+  f0:	ce 01       	movw	r24, r28
+  f2:	0e 94 8a 00 	call	0x114	; 0x114 <__simulator_exit>
+  f6:	ce 01       	movw	r24, r28
+  f8:	0e 94 86 00 	call	0x10c	; 0x10c <_Exit>
+
+Disassembly of section .text._Exit:
+
+0000010c <_Exit>:
+ 10c:	0e 94 34 00 	call	0x68	; 0x68 <_exit>
